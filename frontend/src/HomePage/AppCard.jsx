@@ -99,7 +99,7 @@ export default function AppCard({
           </div>
         </div>
         <div>
-          <OverflowTooltip className="app-card-name font-weight-500 tj-text-md" placement="top" data-cy={`${app.name.toLowerCase().replace(/\s+/g, '-')}-title`}>
+          <OverflowTooltip className="app-card-name font-weight-500 tj-text-md" placement="top" data-cy={`${app.name.toLowerCase().replace(/\s+/g, '-')}-title`} tooltipClassName=''>
             {decodeEntities(app.name)}
           </OverflowTooltip>
         </div>
