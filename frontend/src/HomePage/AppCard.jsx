@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import cx from 'classnames';
 import { AppMenu } from './AppMenu';
 import moment from 'moment';
-import { ToolTip } from '@/_components/index';
+import OverflowTooltip from '@/_components/OverflowTooltip';
 import useHover from '@/_hooks/useHover';
 import configs from './Configs/AppIcon.json';
 import { Link, useNavigate } from 'react-router-dom';
@@ -99,14 +99,9 @@ export default function AppCard({
           </div>
         </div>
         <div>
-          <ToolTip trigger={['hover']} message={app.name}>
-            <h3
-              className="app-card-name font-weight-500 tj-text-md"
-              data-cy={`${app.name.toLowerCase().replace(/\s+/g, '-')}-title`}
-            >
-              {decodeEntities(app.name)}
-            </h3>
-          </ToolTip>
+          <OverflowTooltip className="app-card-name font-weight-500 tj-text-md" placement="top" data-cy={`${app.name.toLowerCase().replace(/\s+/g, '-')}-title`}>
+            {decodeEntities(app.name)}
+          </OverflowTooltip>
         </div>
         <div className="app-creation-time-container" style={{ marginBottom: '12px' }}>
           {canUpdate && (
